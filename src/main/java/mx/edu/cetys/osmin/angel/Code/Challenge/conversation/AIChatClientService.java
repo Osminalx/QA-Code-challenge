@@ -1,6 +1,7 @@
 package mx.edu.cetys.osmin.angel.Code.Challenge.conversation;
 
 import org.springframework.ai.chat.client.ChatClient;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -20,6 +21,7 @@ public class AIChatClientService {
                 .content();
     }
 
+    @Cacheable("Salutes")
     public String salute(){
         String prompt = """
                 Te llamas Auto, eres el timón IA de Wall-e
