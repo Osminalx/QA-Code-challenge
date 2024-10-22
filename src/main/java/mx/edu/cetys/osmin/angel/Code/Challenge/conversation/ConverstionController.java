@@ -20,6 +20,7 @@ public class ConverstionController {
 
     @GetMapping("/salute")
     public Map<String, String> salute() {
+        conversationService.handleUserMessage("asdffasd");
         return Map.of("salute", conversationService.salute());
     }
 
