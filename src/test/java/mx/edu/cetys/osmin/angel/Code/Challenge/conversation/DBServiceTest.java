@@ -19,19 +19,15 @@ public class DBServiceTest {
 
     @BeforeEach
     public void setUp() {
-        // Inicializa los mocks
         MockitoAnnotations.openMocks(this);
     }
 
     @Test
     public void testSaveUserMessage() {
-        // Dado
         String userInput = "Hello World";
 
-        // Cuando
         dbService.saveUserMessage(userInput);
 
-        // Entonces
         verify(jdbcTemplate).update("INSERT INTO user_messages (message) VALUES (?)", userInput);
     }
 }
